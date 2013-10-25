@@ -136,13 +136,6 @@ This method is used to retrieve an `Event` resource by specifying its unique id.
 
     [Event][]
 
-### Create an Event [POST]
-This method is used to create an `Event` resource by specifying its application, player and type.
-
-+ Response 200
-
-    [Event][]
-
 ### Update an Event [PUT]
 This method is used to update a `Event` resource by specifying its unique id and sending a new representation.
 
@@ -189,6 +182,13 @@ An Events Collection is a list of events.
                 }
             ]
                 
+### Create an Event [POST]
+This method is used to create an `Event` resource by specifying its application, player and type.
+
++ Response 200
+
+    [Event][]
+    
 ### Retrieve a list of Events [GET]
 This method is used to retrieve a `List of Event` resource. Note that we reference the resource model in the `Response 200` block.
 
@@ -237,13 +237,6 @@ An Player is person who is part of the game.
 ### Retrieve a Player [GET]
 This method is used to retrieve a `Player` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
 
-+ Response 200
-
-    [Player][]
-
-### Create a Player [POST]
-This method is used to create a `Player` resource by specifying its fistName, lastName and email
-.
 + Response 200
 
     [Player][]
@@ -299,7 +292,14 @@ A Players Collection is a list of Players.
                   ]
                 },
             ]
-                
+
+### Create a Player [POST]
+This method is used to create a `Player` resource by specifying its fistName, lastName and email
+.
++ Response 200
+
+    [Player][]
+    
 ### Retrieve a list of Players [GET]
 This method is used to retrieve a `List of Player` resource. Note that we reference the resource model in the `Response 200` block.
 
@@ -338,13 +338,6 @@ A Badge is something that a player is awarded following a given event acknowlege
 
 ### Retrieve a Badge [GET]
 This method is used to retrieve a `Badge` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
-
-+ Response 200
-
-    [Badge][]
-
-### Create an Badge [POST]
-This method is used to create a `Badge` resource by specifying its name, description and icon.
 
 + Response 200
 
@@ -389,7 +382,14 @@ A Badges Collection is a list of badges.
                   "icon" : "http://..."
                 }                
             ]
-                
+            
+### Create an Badge [POST]
+This method is used to create a `Badge` resource by specifying its name, description and icon.
+
++ Response 200
+
+    [Badge][]
+    
 ### Retrieve a list of Badges [GET]
 This method is used to retrieve a `List of Badge` resource. Note that we reference the resource model in the `Response 200` block.
 
@@ -433,13 +433,6 @@ This method is used to retrieve a `Rule` resource by specifying its unique id. N
 
     [Rule][]
 
-### Create an Rule [POST]
-This method is used to create a `Rule` resource by specifying its name, description and icon.
-
-+ Response 200
-
-    [Rule][]
-
 ### Update a Rule [PUT]
 This method is used to update a `Rule` resource by specifying its unique id and sending a new representation.
 
@@ -478,7 +471,14 @@ A Rules Collection is a list of rules.
                   "badge" : "http://..."
                 }              
             ]
-                
+
+### Create an Rule [POST]
+This method is used to create a `Rule` resource by specifying its name, description and icon.
+
++ Response 200
+
+    [Rule][]    
+    
 ### Retrieve a list of Rules [GET]
 This method is used to retrieve a `List of Rule` resource. Note that we reference the resource model in the `Response 200` block.
 
@@ -530,13 +530,6 @@ A LeaderBoard is something that contains a player ranking according to a given c
 ### Retrieve a LeaderBoard [GET]
 This method is used to retrieve a `LeaderBoard` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
 
-+ Response 200
-
-    [LeaderBoard][]
-
-### Create a LeaderBoard [POST]
-This method is used to create a `LeaderBoard` resource by specifying its name, description and application.
-.
 + Response 200
 
     [LeaderBoard][]
@@ -600,6 +593,13 @@ A LeaderBoards Collection is a list of LeaderBoards.
                   ]
                 }
             ]
+
+### Create a LeaderBoard [POST]
+This method is used to create a `LeaderBoard` resource by specifying its name, description and application.
+.
++ Response 200
+
+    [LeaderBoard][]
                 
 ### Retrieve a list of LeaderBoards [GET]
 This method is used to retrieve a `List of LeaderBoard` resource. Note that we reference the resource model in the `Response 200` block.
