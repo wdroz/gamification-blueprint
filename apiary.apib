@@ -1,0 +1,198 @@
+FORMAT: X-1A
+
+# Introduction
+This is an introduction section, where you should describe the overall purpose of the API and some of the important concepts and abstractions.
+## TEAM
+    Amiet Nils
+    Droz William
+    Wenk Nicolas
+<!-- == RESOURCE GROUP: Fruit and Fruits Collection ======================================================================== -->
+
+# Group Application
+In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+
+
+## Application [/applications/{id}]
+
+An Application is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+
+
+<!-- We can describe parameters and reference them in method calls, later in the document -->
+
++ Parameters
+
+    + id (number, `1`) ... An identifier that uniquely identifies a `Application`.
+
+
++ Model (application/json)
+
+    This is the `application/json` message resource representation.
+
+    + Body
+    
+            {
+              "name": "www.developpez.com",
+              "description": "bla",
+              "apiKey" : "0xdeadbeef",
+              "apiSecret" : "codeurFou"
+              }
+            }
+
+
+### Retrieve an Application [GET]
+This method is used to retrieve an `Application` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
+
+    [Application][]
+
++ Response 200
+
+### Create an Application [POST]
+This method is used to create an `Application` resource by specifying its name, description, apiKey and apiSecret.
+
+    [Application][]
+
++ Response 204
+
+### Update an Application [PUT]
+This method is used to update a `Application` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    [Application][]
+
++ Response 204
+
+### Delete an Application [DELETE]
+This method is used to delete an `Application` resource by specifying its unique id.
+
++ Response 204
+
+
+## Applications Collection [/applications/]
+
+An Applications Collection is a list of applications.
+
++ Model (application/json)
+
+    This is the `application/json` message resource representation.
+
+    + Body
+    
+            [
+                {
+                    "name": "www.developpez.com",
+                    "description": "site de developpement logiciel et IT"
+                },
+                {
+                    "name": "www.perdu.com",
+                    "description": "site mieux que google.ch"
+                },
+                {
+                   "name": "www.google.ch",
+                   "description": "site mieux que perdu.com"
+                }
+            ]
+                
+### Retrieve a list of Applications [GET]
+This method is used to retrieve a `List of Application` resource. Note that we reference the resource model in the `Response 200` block.
+
++ Response 200
+
+    [Applications Collection][]
+
+# Group Event
+In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+
+
+## Event [/events/{id}]
+
+An Event is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+
+
+<!-- We can describe parameters and reference them in method calls, later in the document -->
+
++ Parameters
+
+    + id (number, `1`) ... An identifier that uniquely identifies a `Event`.
+
+
++ Model (application/json)
+
+    This is the `application/json` message resource representation.
+
+    + Body
+    
+            {
+              "application": "1",
+              "player": "5",
+              "type" : "entier",
+              "timestamp" : "123456789"
+            }
+
+
+### Retrieve an Event [GET]
+This method is used to retrieve an `Event` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
+
++ Response 200
+
+    [Event][]
+
+### Update an Event [PUT]
+This method is used to update a `Event` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    [Event][]
+
++ Response 204
+
+### Delete an Event [DELETE]
+This method is used to delete an `Event` resource by specifying its unique id.
+
++ Response 204
+
+
+## Events Collection [/events/]
+
+An Events Collection is a list of events.
+
++ Model (application/json)
+
+    This is the `application/json` message resource representation.
+
+    + Body
+    
+            [
+                {
+                     "application": "1",
+                     "player": "5",
+                     "type" : "entier",
+                     "timestamp" : "123456789"
+                },
+                {
+                     "application": "2",
+                     "player": "1",
+                     "type" : "entier",
+                     "timestamp" : "123456789"
+                },
+                {
+                    "application": "3",
+                    "player": "4",
+                    "type" : "entier",
+                    "timestamp" : "123456789"
+                }
+            ]
+                
+### Retrieve a list of Events [GET]
+This method is used to retrieve a `List of Event` resource. Note that we reference the resource model in the `Response 200` block.
+
++ Response 200
+
+    [Events Collection][]
+    
+## Player [/players/{id}]
+
+
+
+
+
