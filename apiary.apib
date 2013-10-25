@@ -1,7 +1,8 @@
 FORMAT: X-1A
 
 # Introduction
-This is an introduction section, where you should describe the overall purpose of the API and some of the important concepts and abstractions.
+This is a Gamification API. It lets applications track players, events, bades, rules and leaderboards.
+
 ## TEAM
     Amiet Nils
     Droz William
@@ -9,12 +10,12 @@ This is an introduction section, where you should describe the overall purpose o
 <!-- == RESOURCE GROUP: Fruit and Fruits Collection ======================================================================== -->
 
 # Group Application
-In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+In my domain model, I am dealing with applications. I have two distinct resources in that context. The first resource is the `Application` resource, which represent a single application. The second resource the `Applications Collection` resource, which represents a collection of applications (in other words, 0, 1 or many applications).
 
 
 ## Application [/applications/{id}]
 
-An Application is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project.
 
 
 <!-- We can describe parameters and reference them in method calls, later in the document -->
@@ -101,12 +102,12 @@ This method is used to retrieve a `List of Application` resource. Note that we r
     [Applications Collection][]
 
 # Group Event
-In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+In my domain model, I am dealing with events. I have two distinct resources in that context. The first resource is the `Event` resource, which represent a single event (a specific number of points achievment, etc.). The second resource the `Events Collection` resource, which represents a collection of events (in other words, 0, 1 or many events).
 
 
 ## Event [/events/{id}]
 
-An Event is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+An Event is something that a player did at some point in time. 
 
 
 <!-- We can describe parameters and reference them in method calls, later in the document -->
@@ -200,12 +201,12 @@ This method is used to retrieve a `List of Event` resource. Note that we referen
 
 # Group Player
 
-In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+In my domain model, I am dealing with players. I have two distinct resources in that context. The first resource is the `Player` resource, which represent a single player. The second resource the `Players Collection` resource, which represents a collection of players (in other words, 0, 1 or many players).
 
 
 ## Player [/players/{id}]
 
-An Player is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+An Player is person who is part of the game.
 
 
 <!-- We can describe parameters and reference them in method calls, later in the document -->
@@ -309,12 +310,12 @@ This method is used to retrieve a `List of Player` resource. Note that we refere
     [Players Collection][]
 
 # Group Badge
-In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+In my domain model, I am dealing with badges. I have two distinct resources in that context. The first resource is the `Badge` resource, which represent a single bade (a badge of honor, a badge of widsom). The second resource the `Badges Collection` resource, which represents a collection of badges (in other words, 0, 1 or many badges).
 
 
 ## Badge [/badges/{id}]
 
-A Badge is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+A Badge is something that a player is awarded following a given event acknowleged by a rule.
 
 
 <!-- We can describe parameters and reference them in method calls, later in the document -->
@@ -399,12 +400,12 @@ This method is used to retrieve a `List of Badge` resource. Note that we referen
     [Badges Collection][]
 
 # Group Rule
-In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Rule` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Rule Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+In my domain model, I am dealing with rules. I have two distinct resources in that context. The first resource is the `Rule` resource, which represent a single rule. The second resource the `Rules Collection` resource, which represents a collection of rules (in other words, 0, 1 or many rules).
 
 
 ## Rule [/rules/{id}]
 
-A Rule is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+A Rule is something that describes which event triggers the award of which badge.
 
 
 <!-- We can describe parameters and reference them in method calls, later in the document -->
@@ -489,12 +490,12 @@ This method is used to retrieve a `List of Rule` resource. Note that we referenc
 
 # Group LeaderBoard
 
-In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `LeaderBoard` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+In my domain model, I am dealing with leaderboards. I have two distinct resources in that context. The first resource is the `LeaderBoard` resource, which represent a single leaderboard (a top points leaderboard, a top badges leaderboard). The second resource the `LeaderBoards Collection` resource, which represents a collection of leaderboards (in other words, 0, 1 or many leaderboards).
 
 
 ## LeaderBoard [/leaderBoards/{id}]
 
-An LeaderBoard is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
+A LeaderBoard is something that contains a player ranking according to a given criterion.
 
 
 <!-- We can describe parameters and reference them in method calls, later in the document -->
