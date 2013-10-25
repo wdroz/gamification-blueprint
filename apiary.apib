@@ -197,9 +197,116 @@ This method is used to retrieve a `List of Event` resource. Note that we referen
 
     [Events Collection][]
     
+
+# Group Player
+
+In my domain model, I am dealing with fruits. I have two distinct resources in that context. The first resource is the `Fruit` resource, which represent a single fruit (a banana, an apple or a kiwi). The second resource the `Fruits Collection` resource, which represents a collection of fruits (in other words, 0, 1 or many fruits).
+
+
 ## Player [/players/{id}]
 
+An Player is something that you can eat and that is delicious. This is just an example to show that in the API documentation, we have a place where we can describe the resource types, which are in essence the elements of our domain models. 
 
+
+<!-- We can describe parameters and reference them in method calls, later in the document -->
+
++ Parameters
+
+    + id (number, `1`) ... An identifier that uniquely identifies a `Player`.
+
+
++ Model (application/json)
+
+    This is the `application/json` message resource representation.
+
+    + Body
+    
+            {
+              "firstName": "John",
+              "lastName": "Smith",
+              "email" : "john.smith@master.hes-so.ch",
+              "numberOfPoints" : "10",
+              "badges" : 
+              [
+                "http://...",
+                "http://...",
+                "http://..."
+              ]
+            }
+
+
+### Retrieve a Player [GET]
+This method is used to retrieve a `Player` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
+
++ Response 200
+
+    [Player][]
+
+### Create a Player [POST]
+This method is used to create a `Player` resource by specifying its fistName, lastName and email
+.
++ Response 200
+
+    [Player][]
+
+### Update a Player [PUT]
+This method is used to update a `Player` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    [Player][]
+
++ Response 204
+
+### Delete a Player [DELETE]
+This method is used to delete a `Player` resource by specifying its unique id.
+
++ Response 204
+
+
+## Players Collection [/players/]
+
+A Players Collection is a list of Players.
+
++ Model (application/json)
+
+    This is the `application/json` message resource representation.
+
+    + Body
+    
+            [
+                 {
+                  "firstName": "John",
+                  "lastName": "Smith",
+                  "email" : "john.smith@master.hes-so.ch",
+                  "numberOfPoints" : "10",
+                  "badges" : 
+                  [
+                    "http://...",
+                    "http://...",
+                    "http://..."
+                  ]
+                },
+                {
+                  "firstName": "John",
+                  "lastName": "TheRipper",
+                  "email" : "john.theripper@master.hes-so.ch",
+                  "numberOfPoints" : "100",
+                  "badges" : 
+                  [
+                    "http://...",
+                    "http://...",
+                    "http://..."
+                  ]
+                },
+            ]
+                
+### Retrieve a list of Players [GET]
+This method is used to retrieve a `List of Player` resource. Note that we reference the resource model in the `Response 200` block.
+
++ Response 200
+
+    [Players Collection][]
 
 
 
