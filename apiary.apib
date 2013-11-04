@@ -14,10 +14,11 @@ In my domain model, I am dealing with applications. I have two distinct resource
 
 ## Application [/applications/{id}]
 
-An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project.
+An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project. The header has to be set except for POST.
 
++ Headers
 
-<!-- We can describe parameters and reference them in method calls, later in the document -->
+        id: 1
 
 + Parameters
 
@@ -136,7 +137,6 @@ An Event is something that a player did at some point in time.
     
             {
               "type": 222,
-              "application": {"id": 1},
               "player": {"id": 3}
             }
 
