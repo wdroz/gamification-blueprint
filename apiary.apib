@@ -16,9 +16,6 @@ In my domain model, I am dealing with applications. I have two distinct resource
 
 An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project. The header has to be set except for POST.
 
-+ Headers
-
-        id: 1
 
 + Parameters
 
@@ -52,7 +49,13 @@ This method is used to update a `Application` resource by specifying its unique 
 
 + Request Update JSON Message (application/json)
 
-    [Application][]
+    + Headers
+    
+            id:1
+    
+    + Body
+    
+            [Application][]
 
 + Response 204
 
