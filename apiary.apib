@@ -16,6 +16,10 @@ In my domain model, I am dealing with applications. I have two distinct resource
 
 An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project. The header has to be set except for POST.
 
++ Header
+
+        id: 1
+
 
 + Parameters
 
@@ -40,6 +44,10 @@ An Application is something that contains players, rules, bades and leaderboards
 ### Retrieve an Application [GET]
 This method is used to retrieve an `Application` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
 
++ Request Update JSON Message (application/json)
+
+    [Application][]
+
 + Response 200
 
     [Application][]
@@ -49,18 +57,16 @@ This method is used to update a `Application` resource by specifying its unique 
 
 + Request Update JSON Message (application/json)
 
-    + Headers
-    
-            id:1
-    
-    + Body
-    
-            [Application][]
+    [Application][]
 
 + Response 204
 
 ### Delete an Application [DELETE]
 This method is used to delete an `Application` resource by specifying its unique id.
+
++ Request Update JSON Message (application/json)
+
+    [Application][]
 
 + Response 204
 
@@ -124,8 +130,9 @@ In my domain model, I am dealing with events. I have two distinct resources in t
 
 An Event is something that a player did at some point in time. 
 
++ Header
 
-<!-- We can describe parameters and reference them in method calls, later in the document -->
+        id: 1
 
 + Parameters
 
@@ -169,6 +176,10 @@ This method is used to delete an `Event` resource by specifying its unique id.
 ## Events Collection [/events/]
 
 An Events Collection is a list of events.
+
++ Header
+
+        id: 1
 
 + Model (application/json)
 
@@ -221,8 +232,9 @@ In my domain model, I am dealing with players. I have two distinct resources in 
 
 An Player is person who is part of the game.
 
++ Header
 
-<!-- We can describe parameters and reference them in method calls, later in the document -->
+        id: 1
 
 + Parameters
 
@@ -272,6 +284,10 @@ This method is used to delete a `Player` resource by specifying its unique id.
 ## Players Collection [/players/]
 
 A Players Collection is a list of Players.
+
++ Header
+
+        id: 1
 
 + Model (application/json)
 
@@ -328,8 +344,9 @@ In my domain model, I am dealing with badges. I have two distinct resources in t
 
 A Badge is something that a player is awarded following a given event acknowleged by a rule.
 
++ Header
 
-<!-- We can describe parameters and reference them in method calls, later in the document -->
+        id: 1
 
 + Parameters
 
@@ -376,6 +393,10 @@ This method is used to delete a `Badge` resource by specifying its unique id.
 
 A Badges Collection is a list of badges.
 
++ Header
+
+        id: 1
+
 + Model (application/json)
 
     This is the `application/json` message resource representation.
@@ -419,8 +440,9 @@ In my domain model, I am dealing with rules. I have two distinct resources in th
 
 A Rule is something that describes which event triggers the award of which badge.
 
++ Header
 
-<!-- We can describe parameters and reference them in method calls, later in the document -->
+        id: 1
 
 + Parameters
 
@@ -466,6 +488,10 @@ This method is used to delete a `Rule` resource by specifying its unique id.
 
 A Rules Collection is a list of rules.
 
++ Header
+
+        id: 1
+
 + Model (application/json)
 
     This is the `application/json` message resource representation.
@@ -509,8 +535,9 @@ In my domain model, I am dealing with leaderboards. I have two distinct resource
 
 A LeaderBoard is something that contains a player ranking according to a given criterion.
 
++ Header
 
-<!-- We can describe parameters and reference them in method calls, later in the document -->
+        id: 1
 
 + Parameters
 
@@ -557,6 +584,10 @@ This method is used to delete a `LeaderBoard` resource by specifying its unique 
 ## LeaderBoards Collection [/leaderboards/]
 
 A LeaderBoards Collection is a list of LeaderBoards.
+
++ Header
+
+        id: 1
 
 + Model (application/json)
 
