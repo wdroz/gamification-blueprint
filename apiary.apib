@@ -14,7 +14,7 @@ In my domain model, I am dealing with applications. I have two distinct resource
 
 ## Application [/applications/{id}]
 
-An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project. The header has to be set except for POST.
+An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project.
 
 + Header
 
@@ -210,10 +210,12 @@ An Events Collection is a list of events.
                 
 ### Create an Event [POST]
 This method is used to create an `Event` resource by specifying its application, player and type.
-
+    
 + Response 200
 
-    [Event][]
+            {
+                "url": "http://localhost:8080/Gamification/api/events/10"
+            }
     
 ### Retrieve a list of Events [GET]
 This method is used to retrieve a `List of Event` resource. Note that we reference the resource model in the `Response 200` block.
@@ -324,10 +326,12 @@ A Players Collection is a list of Players.
 
 ### Create a Player [POST]
 This method is used to create a `Player` resource by specifying its fistName, lastName and email
-.
+    
 + Response 200
 
-    [Player][]
+            {
+                "url": "http://localhost:8080/Gamification/api/players/13"
+            }
     
 ### Retrieve a list of Players [GET]
 This method is used to retrieve a `List of Player` resource. Note that we reference the resource model in the `Response 200` block.
@@ -420,10 +424,12 @@ A Badges Collection is a list of badges.
             
 ### Create an Badge [POST]
 This method is used to create a `Badge` resource by specifying its name, description and icon.
-
+    
 + Response 200
 
-    [Badge][]
+            {
+                "url": "http://localhost:8080/Gamification/api/badges/19"
+            }
     
 ### Retrieve a list of Badges [GET]
 This method is used to retrieve a `List of Badge` resource. Note that we reference the resource model in the `Response 200` block.
@@ -514,10 +520,12 @@ A Rules Collection is a list of rules.
 
 ### Create an Rule [POST]
 This method is used to create a `Rule` resource by specifying its name, description and icon.
-
+    
 + Response 200
 
-    [Rule][]    
+            {
+                "url": "http://localhost:8080/Gamification/api/rules/37"
+            }   
     
 ### Retrieve a list of Rules [GET]
 This method is used to retrieve a `List of Rule` resource. Note that we reference the resource model in the `Response 200` block.
