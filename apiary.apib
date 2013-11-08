@@ -123,8 +123,8 @@ This method is used to retrieve a `List of Application` resource. Note that we r
     [Applications Collection][]
 
 # Group Event
-In my domain model, I am dealing with events. I have two distinct resources in that context. The first resource is the `Event` resource, which represent a single event (a specific number of points achievment, etc.). The second resource the `Events Collection` resource, which represents a collection of events (in other words, 0, 1 or many events).
-
+An `Event` is an action that a player performed at some point in time.
+An event has a type, a player and a time.
 
 ## Event [/events/{id}]
 
@@ -140,13 +140,16 @@ An Event is something that a player did at some point in time.
     This is the `application/json` message resource representation.
 
     + Body
-    
+
             {
-              "id": 8,
-              "type": 222,
-              "player": {"id": 3},
-              "application": "http://localhost:8080/Gamification/api/applications/1"
+               "application": "http://localhost:8080/Gamification/api/applications/6",
+               "id": 10,
+               "player": "http://localhost:8080/Gamification/api/players/9",
+               "time": "2013-11-08T11:34:24.342",
+               "type": 10
             }
+
+
 
 
 ### Retrieve an Event [GET]
@@ -183,30 +186,25 @@ An Events Collection is a list of events.
     This is the `application/json` message resource representation.
 
     + Body
-    
+
             [
-                {
-                     "id": 1,
-                     "player": "5",
-                     "type" : "entier",
-                     "time" : "123456789",
-                     "application": "http://localhost:8080/Gamification/api/applications/1"
-                },
-                {
-                     "id": 2,
-                     "player": "1",
-                     "type" : "entier",
-                     "time" : "123456789",
-                     "application": "http://localhost:8080/Gamification/api/applications/1"
-                },
-                {
-                    "id": 3,
-                    "player": "4",
-                    "type" : "entier",
-                    "time" : "123456789",
-                    "application": "http://localhost:8080/Gamification/api/applications/1"
-                }
+               {
+                   "application": "http://localhost:8080/Gamification/api/applications/6",
+                   "id": 10,
+                   "player": "http://localhost:8080/Gamification/api/players/9",
+                   "time": "2013-11-08T11:34:24.342",
+                   "type": 10
+               },
+               {
+                   "application": "http://localhost:8080/Gamification/api/applications/6",
+                   "id": 11,
+                   "player": "http://localhost:8080/Gamification/api/players/9",
+                   "time": "2013-11-08T12:43:24.342",
+                   "type": 13
+               }
             ]
+
+
                 
 ### Create an Event [POST]
 This method is used to create an `Event` resource by specifying its application, player and type.
@@ -220,8 +218,8 @@ This method is used to create an `Event` resource by specifying its application,
     + Body
     
             {
-              "type": 222,
-              "player": {"id": 3}
+              "type": 22,
+              "player": {"id": 9}
             }
     
 + Response 200
@@ -240,7 +238,11 @@ This method is used to update a `Event` resource by specifying its unique id and
             id: 1
     + Body
     
-            [Event][]
+            {
+              "id": 10,
+              "type": 22,
+              "player": {"id": 9}
+            }
 
 + Response 204
     
