@@ -128,11 +128,7 @@ In my domain model, I am dealing with events. I have two distinct resources in t
 
 ## Event [/events/{id}]
 
-An Event is something that a player did at some point in time. 
-
-+ Header
-
-        id: 1
+An Event is something that a player did at some point in time.
 
 + Parameters
 
@@ -156,6 +152,12 @@ An Event is something that a player did at some point in time.
 ### Retrieve an Event [GET]
 This method is used to retrieve an `Event` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
 
++ Request
+
+    + Header
+
+            id: 1
+        
 + Response 200
 
     [Event][]
@@ -172,16 +174,18 @@ This method is used to update a `Event` resource by specifying its unique id and
 ### Delete an Event [DELETE]
 This method is used to delete an `Event` resource by specifying its unique id.
 
++ Request
+
+    + Header
+
+            id: 1
+            
 + Response 204
 
 
 ## Events Collection [/events/]
 
 An Events Collection is a list of events.
-
-+ Header
-
-        id: 1
 
 + Model (application/json)
 
@@ -218,6 +222,12 @@ This method is used to create an `Event` resource by specifying its application,
 
 + Request Update JSON Message (application/json)
 
+    + Header
+
+            id: 1
+            
+    + Body
+    
             {
               "type": 222,
               "player": {"id": 3}
@@ -232,6 +242,12 @@ This method is used to create an `Event` resource by specifying its application,
 ### Retrieve a list of Events [GET]
 This method is used to retrieve a `List of Event` resource. Note that we reference the resource model in the `Response 200` block.
 
++ Request
+
+    + Header
+
+            id: 1
+            
 + Response 200
 
     [Events Collection][]
