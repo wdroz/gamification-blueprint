@@ -57,9 +57,11 @@ This method is used to retrieve an `Application` resource by specifying its uniq
 ### Delete an Application [DELETE]
 This method is used to delete an `Application` resource by specifying its unique id.
 
-+ Request Update JSON Message (application/json)
-
-    [Application][]
++ Request
+    
+    + Header
+    
+            id: 6
 
 + Response 204
 
@@ -72,35 +74,57 @@ An Applications Collection is a list of applications.
     This is the `application/json` message resource representation.
 
     + Body
-    
+
             [
-                {
-                    "description": "bla",
-                    "events": [],
-                    "id": 1,
-                    "name": "www.developpez.com",
-                    "players": []
-                },
-                {
-                    "description": "il est cool",
-                    "events": [],
-                    "id": 2,
-                    "name": "www.monsite.com",
-                    "players": []
-                }
+               {
+                   "description": "bla",
+                   "events":
+                   [
+                       "http://localhost:8080/Gamification/api/events/3"
+                   ],
+                   "id": 1,
+                   "name": "mon application",
+                   "players":
+                   [
+                       "http://localhost:8080/Gamification/api/players/2"
+                   ]
+               },
+               {
+                   "description": "bla",
+                   "events":
+                   [
+                       "http://localhost:8080/Gamification/api/events/10"
+                   ],
+                   "id": 6,
+                   "name": "EventApp",
+                   "players":
+                   [
+                       "http://localhost:8080/Gamification/api/players/9"
+                   ]
+               }
             ]
+
+
 
 ### Create an Application [POST] 
 This method is used to create an `Application` resource by specifying its name, description, apiKey and apiSecret.
 
 + Request Update JSON Message (application/json)
 
-            {
-                "description": "bla",
-                "events": [],
-                "name": "www.developpez.com",
-                "players": []
-            }
+        {
+           "name": "mon application",
+           "description": "bla",
+           "events":
+           [
+              
+           ],
+           "players":
+           [
+               
+           ]
+        }
+
+
     
 + Response 200
 
