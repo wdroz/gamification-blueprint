@@ -166,7 +166,7 @@ An event has a type, a player and a time.
 
 ## Event [/events/{id}]
 
-An Event is something that a player did at some point in time.
+An `Event` is something that a player did at some point in time.
 
 + Parameters
 
@@ -269,7 +269,7 @@ Creating an event can trigger the award of points or a badge if there exists a `
             }
 
 ### Update an Event [PUT]
-This method is used to update a `Event` resource by specifying its unique id and sending a new representation.
+This method is used to update an `Event` resource by specifying its unique id and sending a new representation.
 
 + Request Update JSON Message (application/json)
 
@@ -302,12 +302,12 @@ This method is used to retrieve a `List of Event` resource.
 
 # Group Player
 
-A player is a person that takes part in the game. A player has a firstName, a lastName, an email and a number of points.
+A `Player` is a person that takes part in the game. A player has a firstName, a lastName, an email and a number of points.
 A player can also have `Badge`s.
 
 ## Player [/players/{id}]
 
-A Player is person who is part of the game.
+A `Player` is a person who is part of the game.
 
 + Parameters
 
@@ -478,7 +478,7 @@ A player can have different badges (a badge of honor, a badge of widsom).
 
 ## Badge [/badges/{id}]
 
-A Badge is something that a player is awarded following a given event acknowleged by a rule.
+A `Badge` is something that a player is awarded following a given event acknowleged by a rule.
 
 + Parameters
 
@@ -618,7 +618,7 @@ This method is used to retrieve a `List of Badge` resource.
     [Badges Collection][]
 
 # Group Rule
-A Rule is something that describes that a specific type of event triggers the award of a badge and/or a given number of points.
+A `Rule` is something that describes that a specific type of event triggers the award of a badge and/or a given number of points.
 One must specify the application id that is related to the rules that one wants to manipulate as an HTTP header called "id".
 
 
