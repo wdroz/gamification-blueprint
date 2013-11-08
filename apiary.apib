@@ -502,10 +502,6 @@ This method is used to delete a `Rule` resource by specifying its unique id.
 
 A Rules Collection is a list of rules.
 
-+ Header
-
-        id: 1
-
 + Model (application/json)
 
     This is the `application/json` message resource representation.
@@ -528,7 +524,20 @@ A Rules Collection is a list of rules.
 
 ### Create a Rule [POST]
 This method is used to create a `Rule` resource by specifying its name, description and icon.
++ Request
+
+    + Header
     
+            id: 1
+    + Body
+    
+            {
+               "badge": {"id": 4 },
+               "numberOfPoints": 50,
+               "onEventType": 11
+            }
+            
+            
 + Response 200
 
             {
