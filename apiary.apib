@@ -551,108 +551,34 @@ This method is used to retrieve a `List of Rule` resource. Note that we referenc
 In my domain model, I am dealing with leaderboards. I have two distinct resources in that context. The first resource is the `LeaderBoard` resource, which represent a single leaderboard (a top points leaderboard, a top badges leaderboard). The second resource the `LeaderBoards Collection` resource, which represents a collection of leaderboards (in other words, 0, 1 or many leaderboards).
 
 
-## LeaderBoard [/leaderBoards/{id}]
+## LeaderBoard [/leaderboard]
 
-A LeaderBoard is something that contains a player ranking according to a given criterion.
+A LeaderBoard is something that contains a player ranking according to their number of points.
 
 + Header
 
         id: 1
-
-+ Parameters
-
-    + id (number, `1`) ... An identifier that uniquely identifies a `LeaderBoard`.
-
 
 + Model (application/json)
 
     This is the `application/json` message resource representation.
 
     + Body
-    
+
             {
-              "name": "top points",
-              "description": "leaderboard for ...",
-              "application" : "xxx",
-              "ranking" : 
-              [
-                {
-                    "player" : "John",
-                    "points" : "100"
-                },
-                {
-                    "player" : "Timmy",
-                    "points" : "50"
-                },
-              ]
+               "players":
+               [
+                   {
+                       "numberOfPoints": 50,
+                       "url": "http://localhost:8080/Gamification/api/players/9"
+                   }
+               ]
             }
 
 
-### Retrieve a LeaderBoard [GET]
-This method is used to retrieve a `LeaderBoard` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
+### Retrieve the LeaderBoard [GET]
+This method is used to retrieve the `LeaderBoard` for a given application.
 
 + Response 200
 
     [LeaderBoard][]
-
-### Delete a LeaderBoard [DELETE]
-This method is used to delete a `LeaderBoard` resource by specifying its unique id.
-
-+ Response 204
-
-
-## LeaderBoards Collection [/leaderboards/]
-
-A LeaderBoards Collection is a list of LeaderBoards.
-
-+ Header
-
-        id: 1
-
-+ Model (application/json)
-
-    This is the `application/json` message resource representation.
-
-    + Body
-    
-            [
-                {
-                  "name": "top points",
-                  "description": "leaderboard for ...",
-                  "application" : "xxx",
-                  "ranking" : 
-                  [
-                    {
-                        "player" : "John",
-                        "points" : "100"
-                    },
-                    {
-                        "player" : "Timmy",
-                        "points" : "50"
-                    },
-                  ]
-                },
-                {
-                  "name": "top badges",
-                  "description": "leaderboard for ...",
-                  "application" : "xxx",
-                  "ranking" : 
-                  [
-                    {
-                        "player" : "John",
-                        "points" : "3"
-                    },
-                    {
-                        "player" : "Timmy",
-                        "points" : "2"
-                    },
-                  ]
-                }
-            ]
-
-### Retrieve a list of LeaderBoards [GET]
-This method is used to retrieve a `List of LeaderBoard` resource. Note that we reference the resource model in the `Response 200` block.
-
-+ Response 200
-
-    [LeaderBoards Collection][]
