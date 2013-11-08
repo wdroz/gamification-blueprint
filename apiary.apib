@@ -162,15 +162,6 @@ This method is used to retrieve an `Event` resource by specifying its unique id.
 
     [Event][]
 
-### Update an Event [PUT]
-This method is used to update a `Event` resource by specifying its unique id and sending a new representation.
-
-+ Request Update JSON Message (application/json)
-
-    [Event][]
-
-+ Response 204
-
 ### Delete an Event [DELETE]
 This method is used to delete an `Event` resource by specifying its unique id.
 
@@ -238,6 +229,20 @@ This method is used to create an `Event` resource by specifying its application,
             {
                 "url": "http://localhost:8080/Gamification/api/events/10"
             }
+
+### Update an Event [PUT]
+This method is used to update a `Event` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    + Header
+
+            id: 1
+    + Body
+    
+            [Event][]
+
++ Response 204
     
 ### Retrieve a list of Events [GET]
 This method is used to retrieve a `List of Event` resource. Note that we reference the resource model in the `Response 200` block.
