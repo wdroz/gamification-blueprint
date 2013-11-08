@@ -209,6 +209,7 @@ An Events Collection is a list of events.
 ### Create an Event [POST]
 This method is used to create an `Event` resource by specifying its player and type.
 The time of the event will automatically be set to the insertion time. There is no need to specify it.
+Creating an event can trigger the award of points or a badge if there exists a `Rule` for the same type of event.
 
 + Request Update JSON Message (application/json)
 
