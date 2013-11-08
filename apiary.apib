@@ -353,16 +353,11 @@ This method is used to retrieve a `List of Player` resource. Note that we refere
     [Players Collection][]
 
 # Group Badge
-In my domain model, I am dealing with badges. I have two distinct resources in that context. The first resource is the `Badge` resource, which represent a single bade (a badge of honor, a badge of widsom). The second resource the `Badges Collection` resource, which represents a collection of badges (in other words, 0, 1 or many badges).
-
+A player can have different badges (a badge of honor, a badge of widsom).
 
 ## Badge [/badges/{id}]
 
 A Badge is something that a player is awarded following a given event acknowleged by a rule.
-
-+ Header
-
-        id: 1
 
 + Parameters
 
@@ -376,15 +371,25 @@ A Badge is something that a player is awarded following a given event acknowlege
     + Body
     
             {
-              "name": "Badge of honor",
-              "description": "Badge awarded to players who have proved their honor.",
-              "icon" : "http://...",
-              "application" : {"id" : 1}
+               "description": "Badge awarded to players who have proved their honor.",
+               "icon": "http://...",
+               "id": 7,
+               "name": "badge of honor",
+               "players":
+               [
+                   "http://localhost:8080/Gamification/api/players/9"
+               ]
             }
 
 
 ### Retrieve a Badge [GET]
 This method is used to retrieve a `Badge` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
+
++ Request
+
+    + Header
+    
+            id: 1
 
 + Response 200
 
