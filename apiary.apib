@@ -451,16 +451,12 @@ This method is used to retrieve a `List of Badge` resource. Note that we referen
     [Badges Collection][]
 
 # Group Rule
-In my domain model, I am dealing with rules. I have two distinct resources in that context. The first resource is the `Rule` resource, which represent a single rule. The second resource the `Rules Collection` resource, which represents a collection of rules (in other words, 0, 1 or many rules).
+A Rule is something that describes that a specific type of event triggers the award of a badge and/or a given number of points.
+One must specify the application id that is related to the rules that one wants to manipulate as an HTTP header called "id".
 
 
 ## Rule [/rules/{id}]
 
-A Rule is something that describes which event triggers the award of which badge.
-
-+ Header
-
-        id: 1
 
 + Parameters
 
@@ -474,27 +470,27 @@ A Rule is something that describes which event triggers the award of which badge
     + Body
     
             {
-              "onEventType": "xxx",
-              "numberOfPoints": "50",
-              "badge" : "http://..."
+               "application": "http://localhost:8080/Gamification/api/applications/6",
+               "badge": "http://localhost:8080/Gamification/api/badges/7",
+               "id": 8,
+               "numberOfPoints": 50,
+               "onEventType": 10
             }
+
+
 
 
 ### Retrieve a Rule [GET]
 This method is used to retrieve a `Rule` resource by specifying its unique id. Note that we reference the resource model in the `Response 200` block.
++ Request
+
+    + Headers
+            
+            "id": 1
 
 + Response 200
 
     [Rule][]
-
-### Update a Rule [PUT]
-This method is used to update a `Rule` resource by specifying its unique id and sending a new representation.
-
-+ Request Update JSON Message (application/json)
-
-    [Rule][]
-
-+ Response 204
 
 ### Delete an Rule [DELETE]
 This method is used to delete a `Rule` resource by specifying its unique id.
@@ -530,7 +526,7 @@ A Rules Collection is a list of rules.
                 }              
             ]
 
-### Create an Rule [POST]
+### Create a Rule [POST]
 This method is used to create a `Rule` resource by specifying its name, description and icon.
     
 + Response 200
@@ -538,6 +534,23 @@ This method is used to create a `Rule` resource by specifying its name, descript
             {
                 "url": "http://localhost:8080/Gamification/api/rules/37"
             }   
+
+### Update a Rule [PUT]
+This method is used to update a `Rule` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    + Headers
+            
+            "id": 1
+    
+    + Body
+    
+            {
+                "id" : 67
+            }
+
++ Response 204
     
 ### Retrieve a list of Rules [GET]
 This method is used to retrieve a `List of Rule` resource. Note that we reference the resource model in the `Response 200` block.
