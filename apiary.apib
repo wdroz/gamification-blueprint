@@ -43,6 +43,7 @@ This method is used to retrieve an `Application` resource by specifying its uniq
     + Header
             
             id: 6
+            Accept: application/json
 
 + Response 200
 
@@ -100,26 +101,32 @@ An Applications Collection is a list of applications.
 
 
 
-### Create an Application [POST] 
+### Create an Application [POST]
 This method is used to create an `Application` resource by specifying its name, description, apiKey and apiSecret.
 The apiKey and apiSecret are not used at the moment, but could be used for improving the security of the service.
 
 + Request Update JSON Message (application/json)
 
-        {
-           "name": "mon application",
-           "description": "bla",
-           "events":
-           [
-              
-           ],
-           "players":
-           [
-               
-           ],
-          "apiKey" : "0xdeadbeef",
-          "apiSecret" : "secret"
-        }
+    + Header
+
+            Accept: application/json
+        
+    + Body
+    
+            {
+               "name": "mon application",
+               "description": "bla",
+               "events":
+               [
+                  
+               ],
+               "players":
+               [
+                   
+               ],
+              "apiKey" : "0xdeadbeef",
+              "apiSecret" : "secret"
+            }
 
 
     
@@ -158,6 +165,12 @@ This method is used to update an `Application` resource by specifying its unique
                 
 ### Retrieve a list of Applications [GET]
 This method is used to retrieve a `List of Application` resource.
+
++ Request
+
+    + Header
+    
+            Accept: application/json
 
 + Response 200
 
@@ -257,6 +270,7 @@ Creating an event can trigger the award of points or a badge if there exists a `
     + Header
 
             id: 1
+            Accept: application/json
             
     + Body
     
