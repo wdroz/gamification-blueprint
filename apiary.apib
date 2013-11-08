@@ -414,10 +414,6 @@ This method is used to delete a `Badge` resource by specifying its unique id.
 
 A Badges Collection is a list of badges.
 
-+ Header
-
-        id: 1
-
 + Model (application/json)
 
     This is the `application/json` message resource representation.
@@ -425,23 +421,46 @@ A Badges Collection is a list of badges.
     + Body
     
             [
-    
-                {
-                  "name": "Badge of honor",
-                  "description": "Badge awarded to players who have proved their honor.",
-                  "icon" : "http://..."
-                },
-    
-                {
-                  "name": "Badge of wisdom",
-                  "description": "Badge awarded to players who have proved their wisdom.",
-                  "icon" : "http://..."
-                }                
+               {
+                   "description": "Badge awarded to players who have proved their honor.",
+                   "icon": "http://...",
+                   "id": 7,
+                   "name": "Badge of honor",
+                   "players":
+                   [
+                       "http://localhost:8080/Gamification/api/players/9"
+                   ]
+               },
+               {
+                   "description": "Badge awarded to players who have proved their wisdom.",
+                   "icon": "http://...",
+                   "id": 8,
+                   "name": "Badge of wisdom",
+                   "players":
+                   [
+                       "http://localhost:8080/Gamification/api/players/9"
+                   ]
+               }
             ]
+
+
             
 ### Create an Badge [POST]
 This method is used to create a `Badge` resource by specifying its name, description and icon.
++ Request
+
+    + Header
     
+            id: 1
+    
+    + Body
+        
+            {
+              "name": "Badge of Honor",
+              "description": "Badge awarded to players who have proved their honor.",
+              "icon" : "http://..."
+            }
+
 + Response 200
 
             {
@@ -450,7 +469,12 @@ This method is used to create a `Badge` resource by specifying its name, descrip
     
 ### Retrieve a list of Badges [GET]
 This method is used to retrieve a `List of Badge` resource. Note that we reference the resource model in the `Response 200` block.
++ Request
 
+    + Header
+        
+            id: 1
+            
 + Response 200
 
     [Badges Collection][]
