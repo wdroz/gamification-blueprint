@@ -507,20 +507,32 @@ A Rules Collection is a list of rules.
     This is the `application/json` message resource representation.
 
     + Body
-    
+
             [
-    
-                {
-                  "onEventType": "xxx",
-                  "numberOfPoints": "50",
-                  "badge" : "http://..."
-                },
-                {
-                  "onEventType": "yyy",
-                  "numberOfPoints": "25",
-                  "badge" : "http://..."
-                }              
+               {
+                   "application": "http://localhost:8080/Gamification/api/applications/6",
+                   "badge": "http://localhost:8080/Gamification/api/badges/7",
+                   "id": 8,
+                   "numberOfPoints": 50,
+                   "onEventType": 10
+               },
+               {
+                   "application": "http://localhost:8080/Gamification/api/applications/6",
+                   "badge": "http://localhost:8080/Gamification/api/badges/7",
+                   "id": 13,
+                   "numberOfPoints": 50,
+                   "onEventType": 10
+               },
+               {
+                   "application": "http://localhost:8080/Gamification/api/applications/6",
+                   "badge": "http://localhost:8080/Gamification/api/badges/4",
+                   "id": 14,
+                   "numberOfPoints": 50,
+                   "onEventType": 11
+               }
             ]
+
+
 
 ### Create a Rule [POST]
 This method is used to create a `Rule` resource by specifying its name, description and icon.
@@ -556,13 +568,22 @@ This method is used to update a `Rule` resource by specifying its unique id and 
     + Body
     
             {
-                "id" : 67
+               "id": 14,
+               "badge": {"id": 4 },
+               "numberOfPoints": 50,
+               "onEventType": 999
             }
 
 + Response 204
     
 ### Retrieve a list of Rules [GET]
-This method is used to retrieve a `List of Rule` resource. Note that we reference the resource model in the `Response 200` block.
+This method is used to retrieve a `List of Rule` resource.
+
++ Request
+
+    + Headers
+            
+            "id": 1
 
 + Response 200
 
