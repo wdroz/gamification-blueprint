@@ -239,16 +239,12 @@ This method is used to retrieve a `List of Event` resource. Note that we referen
 
 # Group Player
 
-In my domain model, I am dealing with players. I have two distinct resources in that context. The first resource is the `Player` resource, which represent a single player. The second resource the `Players Collection` resource, which represents a collection of players (in other words, 0, 1 or many players).
-
+A player is a person that takes part in the game. A player has a firstName, a lastName, an email and a number of points.
+A player can also have `Badge`s.
 
 ## Player [/players/{id}]
 
-An Player is person who is part of the game.
-
-+ Header
-
-        id: 1
+A Player is person who is part of the game.
 
 + Parameters
 
@@ -280,14 +276,6 @@ This method is used to retrieve a `Player` resource by specifying its unique id.
 
     [Player][]
 
-### Update a Player [PUT]
-This method is used to update a `Player` resource by specifying its unique id and sending a new representation.
-
-+ Request Update JSON Message (application/json)
-
-    [Player][]
-
-+ Response 204
 
 ### Delete a Player [DELETE]
 This method is used to delete a `Player` resource by specifying its unique id.
@@ -299,55 +287,108 @@ This method is used to delete a `Player` resource by specifying its unique id.
 
 A Players Collection is a list of Players.
 
-+ Header
-
-        id: 1
-
 + Model (application/json)
 
     This is the `application/json` message resource representation.
 
     + Body
-    
-            [
-                 {
-                  "firstName": "John",
-                  "lastName": "Smith",
-                  "email" : "john.smith@master.hes-so.ch",
-                  "numberOfPoints" : "10",
-                  "badges" : 
-                  [
-                    "http://...",
-                    "http://...",
-                    "http://..."
-                  ]
-                },
-                {
-                  "firstName": "John",
-                  "lastName": "TheRipper",
-                  "email" : "john.theripper@master.hes-so.ch",
-                  "numberOfPoints" : "100",
-                  "badges" : 
-                  [
-                    "http://...",
-                    "http://...",
-                    "http://..."
-                  ]
-                },
-            ]
+
+    [
+       {
+           "application": "http://localhost:8080/Gamification/api/applications/6",
+           "badges":
+           [
+               "http://localhost:8080/Gamification/api/badges/7"
+           ],
+           "email": "js@master.hes-so.ch",
+           "events":
+           [
+               "http://localhost:8080/Gamification/api/events/10"
+           ],
+           "firstName": "John",
+           "id": 9,
+           "lastName": "Smith",
+           "numberOfPoints": 50
+       },
+       {
+           "application": "http://localhost:8080/Gamification/api/applications/6",
+           "badges":
+           [
+           ],
+           "email": "asdf@foobar.ch",
+           "events":
+           [
+               "http://localhost:8080/Gamification/api/events/11"
+           ],
+           "firstName": "Arthur",
+           "id": 18,
+           "lastName": "Duras",
+           "numberOfPoints": 181
+       }
+    ]
+
+
 
 ### Create a Player [POST]
 This method is used to create a `Player` resource by specifying its fistName, lastName and email
+    
++ Request
+
+    + Header
+    
+            id: 1
+            
+    + Body
+            
+            {
+              "firstName": "John",
+              "lastName": "Smith",
+              "email": "john.smith@foo-bar.tld",
+              "numberOfPoints": 500,
+              "badges": 
+              [
+              ]
+            }
     
 + Response 200
 
             {
                 "url": "http://localhost:8080/Gamification/api/players/13"
             }
+
+### Update a Player [PUT]
+This method is used to update a `Player` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    + Header
+    
+            id: 1
+            
+    + Body
+    
+            {
+              "id": 13,
+              "firstName": "John",
+              "lastName": "Smith",
+              "email": "john.smith@foo-bar.tld",
+              "numberOfPoints": 500,
+              "badges": 
+              [
+              ]
+            }
+
++ Response 204
     
 ### Retrieve a list of Players [GET]
 This method is used to retrieve a `List of Player` resource. Note that we reference the resource model in the `Response 200` block.
 
++ Request
+
+    + Header
+    
+            id: 1
+            
 + Response 200
 
     [Players Collection][]
