@@ -9,12 +9,11 @@ This is a Gamification API. It lets applications track players, events, badges, 
     Wenk Nicolas
 
 # Group Application
-In my domain model, I am dealing with applications. I have two distinct resources in that context. The first resource is the `Application` resource, which represent a single application. The second resource the `Applications Collection` resource, which represents a collection of applications (in other words, 0, 1 or many applications).
-
+The application is the base model for your project. When using the gamification API, you should create an application and then use its ID whenever you manipulate other resources.
 
 ## Application [/applications/{id}]
 
-An Application is something that contains players, rules, bades and leaderboards. This is the base resource for your gamification project.
+An Application is something that contains players, rules, badges and a leaderboard. This is the base resource for your gamification project.
 
 + Parameters
 
