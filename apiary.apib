@@ -54,15 +54,6 @@ This method is used to retrieve an `Application` resource by specifying its uniq
 
     [Application][]
 
-### Update an Application [PUT]
-This method is used to update a `Application` resource by specifying its unique id and sending a new representation.
-
-+ Request Update JSON Message (application/json)
-
-    [Application][]
-
-+ Response 204
-
 ### Delete an Application [DELETE]
 This method is used to delete an `Application` resource by specifying its unique id.
 
@@ -116,6 +107,33 @@ This method is used to create an `Application` resource by specifying its name, 
             {
                 "url": "http://localhost:8080/Gamification/api/applications/1"
             }
+
+### Update an Application [PUT]
+This method is used to update a `Application` resource by specifying its unique id and sending a new representation.
+
++ Request Update JSON Message (application/json)
+
+    + Header
+            
+            id: 6
+            
+    + Body
+        
+            {
+               "description": "bla",
+               "events":
+               [
+                   {"id": 10}
+               ],
+               "id": 6,
+               "name": "Modified name",
+               "players":
+               [
+                   {"id": 9}
+               ]
+            }
+
++ Response 204
                 
 ### Retrieve a list of Applications [GET]
 This method is used to retrieve a `List of Application` resource. Note that we reference the resource model in the `Response 200` block.
